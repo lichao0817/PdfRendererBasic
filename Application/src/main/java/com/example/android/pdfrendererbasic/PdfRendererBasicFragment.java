@@ -61,7 +61,7 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     /**
      * {@link android.widget.ImageView} that shows a PDF page as a {@link android.graphics.Bitmap}
      */
-    private ImageView mImageView;
+    private TouchImageView mImageView;
 
     /**
      * {@link android.widget.Button} to move to the previous page.
@@ -86,7 +86,7 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Retain view references.
-        mImageView = (ImageView) view.findViewById(R.id.image);
+        mImageView = (TouchImageView) view.findViewById(R.id.image);
         mButtonPrevious = (Button) view.findViewById(R.id.previous);
         mButtonNext = (Button) view.findViewById(R.id.next);
         // Bind events.

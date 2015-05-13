@@ -1,7 +1,7 @@
-/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/classes/debug
-/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-899592e54c2a7b24d47916f18889196075f797d6.jar
-/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-549d0be678fe2d3f2216ecaea4e1eb7fbaec211c.jar
-/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/classes-dcd859f32995dee8f5092700d8f2576d44bb2bcb.jar
-/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/classes-58a368f8166553143ea9f6c75c227a566628202c.jar
-/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-de235e6e092f57abb15df427717a41c30ef8820b.jar
-/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/classes-584c959fa6cec44a4a692ef18f7c7c1825da8dca.jar
+C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\classes\debug
+C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-49d9b0d3ce48484c5d4ce2ad35188d3a5ef1c3e0.jar
+C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-fa883d6290039362849f114a5bf013892e2506b3.jar
+C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\classes-2940356795a6cf7cbe451a5f3725f63f2d3b2b58.jar
+C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\classes-6c177a497ce0f61bafe60bfc900bc21ed1c61dfa.jar
+C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-de66da184a1b053c6aa80bff11f482287f7b87a4.jar
+C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\classes-64eaa7c17a913cb62d1b0fd4fbf5bf213d3590de.jar

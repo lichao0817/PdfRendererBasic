@@ -63,16 +63,6 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
      */
     private TouchImageView mImageView;
 
-    /**
-     * {@link android.widget.Button} to move to the previous page.
-     */
-    private Button mButtonPrevious;
-
-    /**
-     * {@link android.widget.Button} to move to the next page.
-     */
-    private Button mButtonNext;
-
     public PdfRendererBasicFragment() {
     }
 
@@ -87,11 +77,6 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
         super.onViewCreated(view, savedInstanceState);
         // Retain view references.
         mImageView = (TouchImageView) view.findViewById(R.id.image);
-        mButtonPrevious = (Button) view.findViewById(R.id.previous);
-        mButtonNext = (Button) view.findViewById(R.id.next);
-        // Bind events.
-        mButtonPrevious.setOnClickListener(this);
-        mButtonNext.setOnClickListener(this);
         // Show the first page by default.
         int index = 0;
         // If there is a savedInstanceState (screen orientations, etc.), we restore the page index.
@@ -188,8 +173,6 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     private void updateUi() {
         int index = mCurrentPage.getIndex();
         int pageCount = mPdfRenderer.getPageCount();
-        mButtonPrevious.setEnabled(0 != index);
-        mButtonNext.setEnabled(index + 1 < pageCount);
         getActivity().setTitle(getString(R.string.app_name_with_index, index + 1, pageCount));
     }
 
@@ -205,16 +188,6 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.previous: {
-                // Move to the previous page
-                showPage(mCurrentPage.getIndex() - 1);
-                break;
-            }
-            case R.id.next: {
-                // Move to the next page
-                showPage(mCurrentPage.getIndex() + 1);
-                break;
-            }
         }
     }
 

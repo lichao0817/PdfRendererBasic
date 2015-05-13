@@ -2,46 +2,46 @@
 <items version="2" >
 
     <item
-        jar="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/exploded-aar/com.android.support/support-v13/21.0.2/classes.jar"
+        jar="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.2\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="61965ae058916e6a57950dd61b0164dc866af19a">
-        <dex dex="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/classes-dcd859f32995dee8f5092700d8f2576d44bb2bcb.jar" />
+        <dex dex="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\classes-2940356795a6cf7cbe451a5f3725f63f2d3b2b58.jar" />
     </item>
     <item
-        jar="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/exploded-aar/com.android.support/support-v13/21.0.2/libs/internal_impl-21.0.2.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="9346da9fb778af9e451211bbc3541daced174ba7">
-        <dex dex="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-899592e54c2a7b24d47916f18889196075f797d6.jar" />
-    </item>
-    <item
-        jar="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/classes.jar"
+        jar="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\classes.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="d1bf02de1c56d942e7a9d093b8610ba1ef4128e3">
-        <dex dex="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/classes-584c959fa6cec44a4a692ef18f7c7c1825da8dca.jar" />
+        <dex dex="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\classes-64eaa7c17a913cb62d1b0fd4fbf5bf213d3590de.jar" />
     </item>
     <item
-        jar="/Users/Chao/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.2/support-annotations-21.0.2.jar"
+        jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.2\support-annotations-21.0.2.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="99373741f99a0556ee293c41e8faa1ca3ae8a4e6">
-        <dex dex="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/support-annotations-21.0.2-549d0be678fe2d3f2216ecaea4e1eb7fbaec211c.jar" />
+        <dex dex="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\support-annotations-21.0.2-fa883d6290039362849f114a5bf013892e2506b3.jar" />
     </item>
     <item
-        jar="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/exploded-aar/com.android.support/cardview-v7/21.0.2/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="b017100da14f9c158c9f5f2f508333c224b24a7c">
-        <dex dex="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/classes-58a368f8166553143ea9f6c75c227a566628202c.jar" />
-    </item>
-    <item
-        jar="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.2/libs/internal_impl-21.0.2.jar"
+        jar="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.2\libs\internal_impl-21.0.2.jar"
         jumboMode="false"
         revision="22.0.1"
         sha1="962e8b12569c56dbdcf8367eb4eac8bb129cd18f">
-        <dex dex="/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/build/intermediates/pre-dexed/debug/internal_impl-21.0.2-de235e6e092f57abb15df427717a41c30ef8820b.jar" />
+        <dex dex="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-de66da184a1b053c6aa80bff11f482287f7b87a4.jar" />
+    </item>
+    <item
+        jar="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\21.0.2\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b017100da14f9c158c9f5f2f508333c224b24a7c">
+        <dex dex="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\classes-6c177a497ce0f61bafe60bfc900bc21ed1c61dfa.jar" />
+    </item>
+    <item
+        jar="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\exploded-aar\com.android.support\support-v13\21.0.2\libs\internal_impl-21.0.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9346da9fb778af9e451211bbc3541daced174ba7">
+        <dex dex="C:\Users\cli\AndroidStudioProjects\PdfRendererBasic\Application\build\intermediates\pre-dexed\debug\internal_impl-21.0.2-49d9b0d3ce48484c5d4ce2ad35188d3a5ef1c3e0.jar" />
     </item>
 
 </items>

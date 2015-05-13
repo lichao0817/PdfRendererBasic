@@ -139,11 +139,9 @@ containing a value of this type.
         public static final int tile=0x7f020002;
     }
     public static final class id {
-        public static final int action_info=0x7f090004;
+        public static final int action_info=0x7f090002;
         public static final int container=0x7f090000;
         public static final int image=0x7f090001;
-        public static final int next=0x7f090003;
-        public static final int previous=0x7f090002;
     }
     public static final class layout {
         public static final int activity_main_real=0x7f030000;

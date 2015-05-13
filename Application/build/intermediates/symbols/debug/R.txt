@@ -26,11 +26,9 @@ int dimen vertical_page_margin 0x7f050009
 int drawable ic_action_info 0x7f020000
 int drawable ic_launcher 0x7f020001
 int drawable tile 0x7f020002
-int id action_info 0x7f090004
+int id action_info 0x7f090002
 int id container 0x7f090000
 int id image 0x7f090001
-int id next 0x7f090003
-int id previous 0x7f090002
 int layout activity_main_real 0x7f030000
 int layout fragment_pdf_renderer_basic 0x7f030001
 int menu main 0x7f080000

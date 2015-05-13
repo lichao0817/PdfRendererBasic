@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (C) 2014 The Android Open Source Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,45 +13,27 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".MainActivity$PlaceholderFragment">
 
-    <com.example.android.pdfrendererbasic.TouchImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@android:color/white"
-        android:scaleType="fitCenter"
-    />
-
     <LinearLayout
-        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:measureWithLargestChild="true"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/previous"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <com.example.android.pdfrendererbasic.TouchImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="@string/previous" />
+            android:background="@android:color/white"
+            android:scaleType="fitCenter" />
 
-        <Button
-            android:id="@+id/next"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/next" />
     </LinearLayout>
-
-</LinearLayout>
-<!-- From: file:/Users/Chao/AndroidStudioProjects/PdfRendererBasic/Application/src/main/res/layout/fragment_pdf_renderer_basic.xml -->
+</ScrollView><!-- From: file:/C:/Users/cli/AndroidStudioProjects/PdfRendererBasic/Application/src/main/res/layout/fragment_pdf_renderer_basic.xml -->

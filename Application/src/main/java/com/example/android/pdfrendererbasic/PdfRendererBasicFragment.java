@@ -16,19 +16,25 @@
 
 package com.example.android.pdfrendererbasic;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.pdf.PdfRenderer;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
+import android.provider.ContactsContract;
+import android.support.v4.widget.SimpleCursorAdapter;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -62,7 +68,16 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     /**
      * {@link android.widget.ImageView} that shows a PDF page as a {@link android.graphics.Bitmap}
      */
-    private TouchImageView mImageView;
+    private TouchImageView[] mImageView;
+
+    private SimpleCursorAdapter mAdapter;
+
+    private static final String[] PROJECTION = new String[] {ContactsContract.Data._ID,
+            ContactsContract.Data.DISPLAY_NAME};
+
+    private static final String SELECTION = "((" +
+            ContactsContract.Data.DISPLAY_NAME + " NOTNULL) AND (" +
+            ContactsContract.Data.DISPLAY_NAME + " != '' ))";
 
     public PdfRendererBasicFragment() {
     }
@@ -77,14 +92,19 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Retain view references.
-        mImageView = (TouchImageView) view.findViewById(R.id.image0);
+        mImageView = new TouchImageView[3];
+        mImageView[0] = (TouchImageView) view.findViewById(R.id.image0);
+        mImageView[1] = (TouchImageView) view.findViewById(R.id.image1);
+        mImageView[2] = (TouchImageView) view.findViewById(R.id.image2);
         // Show the first page by default.
         int index = 0;
         // If there is a savedInstanceState (screen orientations, etc.), we restore the page index.
         if (null != savedInstanceState) {
             index = savedInstanceState.getInt(STATE_CURRENT_PAGE_INDEX, 0);
         }
-        showPage(index);
+        showPage(index, 0);
+        showPage(1, 1);
+        showPage(2, 2);
     }
 
     @Override
@@ -145,7 +165,7 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
      *
      * @param index The page index.
      */
-    private void showPage(int index) {
+    private void showPage(int index, int page) {
         if (mPdfRenderer.getPageCount() <= index) {
             return;
         }
@@ -164,7 +184,7 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
         // Pass either RENDER_MODE_FOR_DISPLAY or RENDER_MODE_FOR_PRINT for the last parameter.
         mCurrentPage.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
         // We are ready to show the Bitmap to user.
-        mImageView.setImageBitmap(bitmap);
+        mImageView[page].setImageBitmap(bitmap);
         updateUi();
     }
 
@@ -192,4 +212,33 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
         }
     }
 
+    public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight){
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        if (height > reqHeight || width > reqWidth){
+
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            while ( (halfHeight / inSampleSize) > reqHeight && (halfWidth / inSampleSize) > reqWidth ){
+                inSampleSize *= 2;
+            }
+
+        }
+
+        return inSampleSize;
+    }
+
+    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight){
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res, resId, options);
+
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        options.inJustDecodeBounds = false;
+        return BitmapFactory.decodeResource(res, resId, options);
+    }
 }

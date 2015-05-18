@@ -24,7 +24,7 @@
     <string name="app_name">PdfRendererBasic</string>
     <!-- From: file:/C:/Users/cli/AndroidStudioProjects/PdfRendererBasic/Application/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="app_name_with_index">PdfRendererBasic (%1$d/%2$d)</string>
+    <string name="app_name_with_index">Viewer (%1$d/%2$d)</string>
     <string name="info">Info</string>
     <!-- From: file:/C:/Users/cli/AndroidStudioProjects/PdfRendererBasic/Application/src/main/res/values/base-strings.xml -->
     <eat-comment/>

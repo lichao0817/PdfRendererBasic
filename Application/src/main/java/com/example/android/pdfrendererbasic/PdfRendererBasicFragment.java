@@ -71,7 +71,7 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     /**
      * {@link android.widget.ImageView} that shows a PDF page as a {@link android.graphics.Bitmap}
      */
-    private TouchImageView[] mImageView;
+    private ImageView[] mImageView;
 
     private SimpleCursorAdapter mAdapter;
 
@@ -95,10 +95,14 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Retain view references.
-        mImageView = new TouchImageView[3];
-        mImageView[0] = (TouchImageView) view.findViewById(R.id.image0);
-        mImageView[1] = (TouchImageView) view.findViewById(R.id.image1);
-        mImageView[2] = (TouchImageView) view.findViewById(R.id.image2);
+        mImageView = new ImageView[3];
+        mImageView[0] = (ImageView) view.findViewById(R.id.image0);
+        mImageView[1] = (ImageView) view.findViewById(R.id.image1);
+        mImageView[2] = (ImageView) view.findViewById(R.id.image2);
+//        mImageView[3] = (TouchImageView) view.findViewById(R.id.image3);
+//        mImageView[4] = (TouchImageView) view.findViewById(R.id.image4);
+//        mImageView[5] = (TouchImageView) view.findViewById(R.id.image5);
+//        mImageView[6] = (TouchImageView) view.findViewById(R.id.image6);
         // Show the first page by default.
         int index = 0;
         // If there is a savedInstanceState (screen orientations, etc.), we restore the page index.
@@ -108,6 +112,10 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
         showPage(index, 0);
         showPage(1, 1);
         showPage(2, 2);
+//        showPage(3, 3);
+//        showPage(4, 4);
+//        showPage(5, 5);
+//        showPage(6, 6);
     }
 
     @Override
@@ -178,26 +186,17 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
         }
         // Use `openPage` to open a specific page in PDF.
         mCurrentPage = mPdfRenderer.openPage(index);
+
         // Important: the destination bitmap must be ARGB (not RGB).
-        Bitmap bitmap = Bitmap.createBitmap(mCurrentPage.getWidth(), mCurrentPage.getHeight(),
+        Bitmap bitmap = Bitmap.createBitmap((int)(mCurrentPage.getWidth()*calculateInSampleSize()), (int)(mCurrentPage.getHeight()*calculateInSampleSize()),
                 Bitmap.Config.ARGB_8888);
         // Here, we render the page onto the Bitmap.
         // To render a portion of the page, use the second and third parameter. Pass nulls to get
         // the default result.
         // Pass either RENDER_MODE_FOR_DISPLAY or RENDER_MODE_FOR_PRINT for the last parameter.
-        mCurrentPage.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
+        mCurrentPage.render(bitmap, null, null, PdfRenderer.Page.RENDER_MODE_FOR_PRINT);
         // We are ready to show the Bitmap to user.
         mImageView[page].setImageBitmap(bitmap);
-        updateUi();
-    }
-
-    /**
-     * Updates the state of 2 control buttons in response to the current page index.
-     */
-    private void updateUi() {
-        int index = mCurrentPage.getIndex();
-        int pageCount = mPdfRenderer.getPageCount();
-        getActivity().setTitle(getString(R.string.app_name_with_index, index + 1, pageCount));
     }
 
     /**
@@ -215,34 +214,9 @@ public class PdfRendererBasicFragment extends Fragment implements View.OnClickLi
         }
     }
 
-    public static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight){
-        final int height = options.outHeight;
-        final int width = options.outWidth;
-        int inSampleSize = 1;
-
-        if (height > reqHeight || width > reqWidth){
-
-            final int halfHeight = height / 2;
-            final int halfWidth = width / 2;
-
-            while ( (halfHeight / inSampleSize) > reqHeight && (halfWidth / inSampleSize) > reqWidth ){
-                inSampleSize *= 2;
-            }
-
-        }
-
-        return inSampleSize;
-    }
-
-    public static Bitmap decodeSampledBitmapFromResource(Resources res, int resId, int reqWidth, int reqHeight){
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeResource(res, resId, options);
-
-        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
-
-        options.inJustDecodeBounds = false;
-        return BitmapFactory.decodeResource(res, resId, options);
+    public double calculateInSampleSize(){
+        int screenWidth = getActivity().getResources().getDisplayMetrics().widthPixels;
+        return screenWidth * 1.0 / mCurrentPage.getWidth();
     }
 
     class BitmapWorkerTask extends AsyncTask<Integer, Void, Bitmap> {

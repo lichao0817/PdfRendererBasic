@@ -48,7 +48,7 @@ public class TouchImageView extends ImageView {
 	// min/max zoom boundary.
 	//
 	private static final float SUPER_MIN_MULTIPLIER = .75f;
-	private static final float SUPER_MAX_MULTIPLIER = 1.25f;
+	private static final float SUPER_MAX_MULTIPLIER = 4.0f;
 
     //
     // Scale of image ranges from minScale to maxScale, where minScale == 1
@@ -401,7 +401,7 @@ public class TouchImageView extends ImageView {
     /**
      * Set zoom parameters equal to another TouchImageView. Including scale, position,
      * and ScaleType.
-     * @param TouchImageView
+     * @param com.example.android.pdfrendererbasic.TouchImageView
      */
     public void setZoom(TouchImageView img) {
     	PointF center = img.getScrollPosition();
